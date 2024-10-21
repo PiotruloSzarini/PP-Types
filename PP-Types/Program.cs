@@ -13,7 +13,7 @@ string[] names = {
 // After all elements except last one should be ", " - also on the end of lines.
 // After last element should be ".".
 void PrintGroups(string[] t, int perLine)
-{
+{ 
 
     for (int i = 0; i < names.Length; i++)
     {
@@ -44,7 +44,7 @@ void PrintGroups(string[] t, int perLine)
 // If element is too long it should be trimmed.
 
 void PrintColumns(string[] t, int perLine, int width)
-{
+{ 
     for (int i = 0; i < names.Length; i++)
     {
         if (i % perLine == 0 && i != 0)
