@@ -15,7 +15,25 @@ string[] names = {
 void PrintGroups(string[] t, int perLine)
 {
 
-    // Write required code.
+    for (int i = 0; i < names.Length; i++)
+    {
+        if (i == (names.Length - 1))
+        {
+            Console.Write($"{names[i]}.");
+        }
+        else
+        {
+            if (i % perLine == (perLine - 1) && i != 0)
+            {
+                Console.WriteLine($"{names[i]},");
+
+            }
+            else
+            {
+                Console.Write($"{names[i]},");
+            }
+        }
+    }
 
 }
 
@@ -27,9 +45,35 @@ void PrintGroups(string[] t, int perLine)
 
 void PrintColumns(string[] t, int perLine, int width)
 {
-
-    // Write required code.
-
+    for (int i = 0; i < names.Length; i++)
+    {
+        if (i % perLine == 0 && i != 0)
+        {
+            Console.WriteLine();
+        }
+        if ((i + 1) % perLine == 0 && i != 0)
+        {
+            if (names[i].Length < width)
+            {
+                Console.Write($"{names[i].PadRight(width)} ");
+            }
+            else
+            {
+                Console.Write($"{names[i][0..width]} ");
+            }
+        }
+        else
+        {
+            if (names[i].Length < width)
+            {
+                Console.Write($"{names[i].PadRight(width)}| ");
+            }
+            else
+            {
+                Console.Write($"{names[i][0..width]}| ");
+            }
+        }
+    }
 }
 
 
